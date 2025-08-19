@@ -1,0 +1,603 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 1000px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        max-height: 1000px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--progress-width, 0%);
+    }
+}
+
+/* Recipe Card */
+.recipe-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Section */
+.recipe-header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.recipe-image-container {
+    position: relative;
+    height: 100%;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.recipe-image:hover {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 40px 30px 30px;
+    color: white;
+}
+
+.recipe-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-meta {
+    display: flex;
+    gap: 25px;
+    font-size: 0.9rem;
+}
+
+.recipe-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recipe-meta i {
+    color: #ffd700;
+}
+
+/* Description */
+.recipe-description {
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 3px solid #e9ecef;
+}
+
+.recipe-description p {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Progress Bar */
+.progress-container {
+    padding: 20px 30px;
+    background: #fff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.5s ease;
+    animation: progressFill 0.8s ease-out forwards;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Timer */
+.timer-container {
+    display: none;
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.timer-container.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.timer-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timer-btn:hover {
+    background: #5a6fd8;
+    transform: scale(1.1);
+}
+
+/* Sections */
+.ingredients-section,
+.instructions-section {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    background: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.section-header:hover {
+    background: #f8f9fa;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-header i {
+    color: #667eea;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #667eea;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn.rotated {
+    transform: rotate(180deg);
+}
+
+.section-content {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.section-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+/* Ingredients */
+.ingredients-list {
+    list-style: none;
+    padding: 0 30px 30px;
+}
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ingredient-item:hover {
+    background: #f8f9fa;
+    padding-left: 15px;
+    color: #667eea;
+    transform: translateX(5px);
+}
+
+.ingredient-item:last-child {
+    border-bottom: none;
+}
+
+.amount {
+    font-weight: 600;
+    color: #667eea;
+    min-width: 80px;
+    margin-right: 15px;
+}
+
+.ingredient {
+    flex-grow: 1;
+}
+
+/* Instructions */
+.instructions-list {
+    list-style: none;
+    padding: 0 30px 30px;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #e9ecef;
+    transition: all 0.4s ease;
+    opacity: 0.6;
+}
+
+.instruction-step.active {
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+    border-left-color: #667eea;
+    opacity: 1;
+    animation: pulse 2s infinite;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.instruction-step.completed {
+    background: #d4edda;
+    border-left-color: #28a745;
+    opacity: 0.8;
+}
+
+.step-number {
+    background: #667eea;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.instruction-step.active .step-number {
+    background: #5a6fd8;
+    transform: scale(1.1);
+}
+
+.instruction-step.completed .step-number {
+    background: #28a745;
+}
+
+.step-content {
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-right: 15px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    padding: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 130px;
+    justify-content: center;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.secondary-btn {
+    background: #f8f9fa;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.secondary-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.secondary-btn:disabled:hover {
+    background: #f8f9fa;
+    color: #667eea;
+}
+
+/* Footer */
+.recipe-footer {
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.tips h3 {
+    margin-bottom: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tips h3 i {
+    color: #ffd700;
+}
+
+.tips ul {
+    list-style: none;
+}
+
+.tips li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+}
+
+.tips li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .recipe-card {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .action-buttons,
+    .timer-container {
+        display: none;
+    }
+    
+    .section-content {
+        max-height: none !important;
+        opacity: 1 !important;
+    }
+    
+    .recipe-image {
+        max-height: 200px;
+    }
+    
+    .instruction-step {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .recipe-title {
+        font-size: 2rem;
+    }
+    
+    .recipe-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .section-header {
+        padding: 20px 20px;
+    }
+    
+    .ingredients-list,
+    .instructions-list {
+        padding: 0 20px 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+    
+    .instruction-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+    
+    .timer-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-header {
+        height: 250px;
+    }
+    
+    .recipe-title {
+        font-size: 1.8rem;
+    }
+    
+    .image-overlay {
+        padding: 30px 20px 20px;
+    }
+    
+    .recipe-description,
+    .progress-container,
+    .timer-container {
+        padding: 15px 20px;
+    }
+    
+    .ingredients-list,
+    .instructions-list {
+        padding: 0 15px 15px;
+    }
+    
+    .instruction-step {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .ingredient-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .amount {
+        min-width: auto;
+        margin-right: 0;
+    }
+}

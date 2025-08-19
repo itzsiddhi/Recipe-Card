@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Card - Classic Bruschetta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="recipe-card">
+            <!-- Header Section -->
+            <header class="recipe-header">
+                <div class="recipe-image-container">
+                    <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=500&h=300&fit=crop" 
+                         alt="Classic Bruschetta" class="recipe-image">
+                    <div class="image-overlay">
+                        <h1 class="recipe-title">Classic Bruschetta</h1>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                <span>20 mins</span>
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                <span>6 servings</span>
+                            </span>
+                            <span class="difficulty">
+                                <i class="fas fa-star"></i>
+                                <span>Easy</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Recipe Description -->
+            <div class="recipe-description">
+                <p>Fresh and vibrant Italian appetizer with ripe tomatoes, basil, and garlic on crispy toasted bread. This classic bruschetta is perfect for entertaining and showcases the beauty of simple, quality ingredients.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <span class="progress-text" id="progressText">Ready to start cooking!</span>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-container" id="timerContainer">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span id="timerDisplay">00:00</span>
+                    <button class="timer-btn" id="pauseTimer">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ingredients Section -->
+            <section class="ingredients-section">
+                <div class="section-header" id="ingredientsHeader">
+                    <h2>
+                        <i class="fas fa-list-ul"></i>
+                        Ingredients
+                    </h2>
+                    <button class="toggle-btn" id="ingredientsToggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="section-content" id="ingredientsContent">
+                    <ul class="ingredients-list">
+                        <li class="ingredient-item">
+                            <span class="amount">1 loaf</span>
+                            <span class="ingredient">Italian bread, sliced 1/2 inch thick</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">4 large</span>
+                            <span class="ingredient">ripe tomatoes, diced</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">3 cloves</span>
+                            <span class="ingredient">garlic, minced (plus 2 whole cloves)</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/4 cup</span>
+                            <span class="ingredient">fresh basil, chopped</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">3 tbsp</span>
+                            <span class="ingredient">extra virgin olive oil</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">2 tbsp</span>
+                            <span class="ingredient">balsamic vinegar</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/2 tsp</span>
+                            <span class="ingredient">salt</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/4 tsp</span>
+                            <span class="ingredient">black pepper</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/4 cup</span>
+                            <span class="ingredient">parmesan cheese, grated (optional)</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="instructions-section">
+                <div class="section-header" id="instructionsHeader">
+                    <h2>
+                        <i class="fas fa-clipboard-list"></i>
+                        Instructions
+                    </h2>
+                    <button class="toggle-btn" id="instructionsToggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="section-content" id="instructionsContent">
+                    <ol class="instructions-list">
+                        <li class="instruction-step" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Prepare tomato mixture:</strong> In a bowl, combine diced tomatoes, minced garlic, chopped basil, olive oil, balsamic vinegar, salt, and pepper. Mix well and let sit for 10 minutes.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Toast bread:</strong> Preheat oven to 450°F (230°C). Place bread slices on a baking sheet and toast for 5-6 minutes until golden and crispy.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Rub with garlic:</strong> While bread is still warm, rub each slice with the whole garlic cloves to infuse flavor.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>Drain tomatoes:</strong> Use a slotted spoon to drain excess liquid from the tomato mixture for better texture.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="5">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <strong>Top bread:</strong> Spoon the tomato mixture generously onto each slice of toasted bread.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="6">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <strong>Finish and serve:</strong> Sprinkle with parmesan cheese if desired and serve immediately while the bread is still crispy.
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="primary-btn" id="startCookingBtn">
+                    <i class="fas fa-play"></i>
+                    Start Cooking
+                </button>
+                <button class="secondary-btn" id="nextStepBtn" disabled>
+                    <i class="fas fa-arrow-right"></i>
+                    Next Step
+                </button>
+                <button class="secondary-btn" id="resetBtn">
+                    <i class="fas fa-undo"></i>
+                    Reset
+                </button>
+                <button class="secondary-btn" id="printBtn">
+                    <i class="fas fa-print"></i>
+                    Print Recipe
+                </button>
+            </div>
+
+            <!-- Recipe Footer -->
+            <footer class="recipe-footer">
+                <div class="tips">
+                    <h3><i class="fas fa-lightbulb"></i> Pro Tips</h3>
+                    <ul>
+                        <li>Use the ripest tomatoes you can find for the best flavor</li>
+                        <li>Let the tomato mixture sit to develop flavors before serving</li>
+                        <li>Serve immediately to maintain bread crispness</li>
+                        <li>Try different bread types like ciabatta or sourdough</li>
+                        <li>Add a drizzle of good olive oil just before serving</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

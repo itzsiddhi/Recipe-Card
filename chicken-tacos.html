@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Card - Chicken Tacos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="recipe-card">
+            <!-- Header Section -->
+            <header class="recipe-header">
+                <div class="recipe-image-container">
+                    <img src="https://www.countrysidecravings.com/wp-content/uploads/2015/01/spicy-chicken-tacos-image.jpg" 
+                         alt="Chicken Tacos" class="recipe-image">
+                    <div class="image-overlay">
+                        <h1 class="recipe-title">Chicken Tacos</h1>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                <span>30 mins</span>
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                <span>4 servings</span>
+                            </span>
+                            <span class="difficulty">
+                                <i class="fas fa-star"></i>
+                                <span>Easy</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Recipe Description -->
+            <div class="recipe-description">
+                <p>Flavorful and juicy chicken tacos with perfectly seasoned meat, fresh toppings, and warm tortillas. These authentic-style tacos are perfect for a quick weeknight dinner or casual entertaining.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <span class="progress-text" id="progressText">Ready to start cooking!</span>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-container" id="timerContainer">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span id="timerDisplay">00:00</span>
+                    <button class="timer-btn" id="pauseTimer">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ingredients Section -->
+            <section class="ingredients-section">
+                <div class="section-header" id="ingredientsHeader">
+                    <h2>
+                        <i class="fas fa-list-ul"></i>
+                        Ingredients
+                    </h2>
+                    <button class="toggle-btn" id="ingredientsToggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="section-content" id="ingredientsContent">
+                    <h4>For the Chicken:</h4>
+                    <ul class="ingredients-list">
+                        <li class="ingredient-item">
+                            <span class="amount">1 lb</span>
+                            <span class="ingredient">chicken breast, sliced thin</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">2 tbsp</span>
+                            <span class="ingredient">olive oil</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 tsp</span>
+                            <span class="ingredient">chili powder</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 tsp</span>
+                            <span class="ingredient">cumin</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 tsp</span>
+                            <span class="ingredient">paprika</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/2 tsp</span>
+                            <span class="ingredient">garlic powder</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/2 tsp</span>
+                            <span class="ingredient">salt</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/4 tsp</span>
+                            <span class="ingredient">black pepper</span>
+                        </li>
+                    </ul>
+                    <h4>For Assembly:</h4>
+                    <ul class="ingredients-list">
+                        <li class="ingredient-item">
+                            <span class="amount">8</span>
+                            <span class="ingredient">small corn or flour tortillas</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 cup</span>
+                            <span class="ingredient">lettuce, shredded</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1</span>
+                            <span class="ingredient">tomato, diced</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/2 cup</span>
+                            <span class="ingredient">cheese, shredded</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/4 cup</span>
+                            <span class="ingredient">sour cream</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1</span>
+                            <span class="ingredient">lime, cut into wedges</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1/4 cup</span>
+                            <span class="ingredient">cilantro, chopped</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="instructions-section">
+                <div class="section-header" id="instructionsHeader">
+                    <h2>
+                        <i class="fas fa-clipboard-list"></i>
+                        Instructions
+                    </h2>
+                    <button class="toggle-btn" id="instructionsToggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="section-content" id="instructionsContent">
+                    <ol class="instructions-list">
+                        <li class="instruction-step" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Season chicken:</strong> In a bowl, combine chili powder, cumin, paprika, garlic powder, salt, and pepper. Toss chicken with olive oil and spice mixture.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Cook chicken:</strong> Heat a large skillet over medium-high heat. Cook seasoned chicken for 6-8 minutes, stirring occasionally, until fully cooked and golden.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Warm tortillas:</strong> Heat tortillas in a dry skillet for 30 seconds on each side, or wrap in damp paper towels and microwave for 30 seconds.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>Prepare toppings:</strong> Set up all toppings in small bowls: shredded lettuce, diced tomato, cheese, sour cream, and chopped cilantro.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="5">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <strong>Assemble tacos:</strong> Place chicken in warm tortillas. Top with lettuce, tomato, cheese, and a dollop of sour cream.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="6">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <strong>Finish and serve:</strong> Garnish with fresh cilantro and serve immediately with lime wedges on the side.
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="primary-btn" id="startCookingBtn">
+                    <i class="fas fa-play"></i>
+                    Start Cooking
+                </button>
+                <button class="secondary-btn" id="nextStepBtn" disabled>
+                    <i class="fas fa-arrow-right"></i>
+                    Next Step
+                </button>
+                <button class="secondary-btn" id="resetBtn">
+                    <i class="fas fa-undo"></i>
+                    Reset
+                </button>
+                <button class="secondary-btn" id="printBtn">
+                    <i class="fas fa-print"></i>
+                    Print Recipe
+                </button>
+            </div>
+
+            <!-- Recipe Footer -->
+            <footer class="recipe-footer">
+                <div class="tips">
+                    <h3><i class="fas fa-lightbulb"></i> Pro Tips</h3>
+                    <ul>
+                        <li>Don't overcook the chicken - it should be juicy and tender</li>
+                        <li>Let the chicken rest for 2-3 minutes before slicing</li>
+                        <li>Warm tortillas for better flexibility and flavor</li>
+                        <li>Set up a taco bar so everyone can customize their tacos</li>
+                        <li>Add hot sauce or salsa for extra flavor</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Collection - Delicious Recipes for Every Occasion</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Recipe Hub</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#recipes" class="nav-link">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#categories" class="nav-link">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Discover Amazing <span class="highlight">Recipes</span></h1>
+                <p class="hero-subtitle">From quick weeknight dinners to show-stopping desserts, find the perfect recipe for every occasion</p>
+                <div class="hero-buttons">
+                    <a href="#recipes" class="btn-primary">
+                        <i class="fas fa-search"></i>
+                        Explore Recipes
+                    </a>
+                    <a href="#categories" class="btn-secondary">
+                        <i class="fas fa-list"></i>
+                        Browse Categories
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Delicious Food">
+                <div class="floating-elements">
+                    <div class="floating-item item-1">🍰</div>
+                    <div class="floating-item item-2">🍕</div>
+                    <div class="floating-item item-3">🥗</div>
+                    <div class="floating-item item-4">🍜</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Delicious Recipes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">15-60</div>
+                    <div class="stat-label">Minutes Prep Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number">5★</div>
+                    <div class="stat-label">Rated Recipes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">2-8</div>
+                    <div class="stat-label">Servings Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Categories -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recipe Categories</h2>
+                <p class="section-subtitle">Explore recipes by your favorite category</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card desserts">
+                    <div class="category-icon">🍰</div>
+                    <h3>Desserts</h3>
+                    <p>Sweet treats and delicious cakes</p>
+                    <span class="recipe-count">4 recipes</span>
+                </div>
+                <div class="category-card main-dishes">
+                    <div class="category-icon">🍖</div>
+                    <h3>Main Dishes</h3>
+                    <p>Hearty meals for lunch and dinner</p>
+                    <span class="recipe-count">3 recipes</span>
+                </div>
+                <div class="category-card appetizers">
+                    <div class="category-icon">🥗</div>
+                    <h3>Appetizers</h3>
+                    <p>Perfect starters for any meal</p>
+                    <span class="recipe-count">2 recipes</span>
+                </div>
+                <div class="category-card beverages">
+                    <div class="category-icon">☕</div>
+                    <h3>Beverages</h3>
+                    <p>Refreshing drinks and smoothies</p>
+                    <span class="recipe-count">1 recipe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Cards Section -->
+    <section class="recipes-section" id="recipes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Recipes</h2>
+                <p class="section-subtitle">Handpicked recipes that are guaranteed to impress</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Recipes</button>
+                <button class="filter-btn" data-category="desserts">Desserts</button>
+                <button class="filter-btn" data-category="main-dishes">Main Dishes</button>
+                <button class="filter-btn" data-category="appetizers">Appetizers</button>
+                <button class="filter-btn" data-category="beverages">Beverages</button>
+            </div>
+
+            <div class="recipes-grid" id="recipesGrid">
+                <!-- Recipe 1: Chocolate Cake -->
+                <div class="recipe-card" data-category="desserts" data-recipe="chocolate-cake">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Chocolate Cake">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Medium</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Rich Chocolate Cake</h3>
+                        <p class="recipe-description">A decadent chocolate cake with deep cocoa flavor and moist texture</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                45 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                8 servings
+                            </span>
+                        </div>
+                        <a href="index.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 2: Beef Stir Fry -->
+                <div class="recipe-card" data-category="main-dishes" data-recipe="beef-stir-fry">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop" alt="Beef Stir Fry">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Easy</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Asian Beef Stir Fry</h3>
+                        <p class="recipe-description">Quick and flavorful beef stir fry with vegetables and savory sauce</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                20 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                4 servings
+                            </span>
+                        </div>
+                        <a href="beef-stir-fry.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 3: Caesar Salad -->
+                <div class="recipe-card" data-category="appetizers" data-recipe="caesar-salad">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop" alt="Caesar Salad">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Easy</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Classic Caesar Salad</h3>
+                        <p class="recipe-description">Crispy romaine lettuce with homemade dressing and croutons</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                15 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                4 servings
+                            </span>
+                        </div>
+                        <a href="caesar-salad.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 4: Cheesecake -->
+                <div class="recipe-card" data-category="desserts" data-recipe="cheesecake">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=400&h=300&fit=crop" alt="Cheesecake">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Hard</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">New York Cheesecake</h3>
+                        <p class="recipe-description">Creamy, rich cheesecake with a graham cracker crust</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                60 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                12 servings
+                            </span>
+                        </div>
+                        <a href="cheesecake.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 5: Grilled Salmon -->
+                <div class="recipe-card" data-category="main-dishes" data-recipe="grilled-salmon">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=300&fit=crop" alt="Grilled Salmon">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Medium</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Herb-Crusted Salmon</h3>
+                        <p class="recipe-description">Perfectly grilled salmon with fresh herbs and lemon</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                25 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                4 servings
+                            </span>
+                        </div>
+                        <a href="grilled-salmon.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 6: Tiramisu -->
+                <div class="recipe-card" data-category="desserts" data-recipe="tiramisu">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop" alt="Tiramisu">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Medium</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Classic Tiramisu</h3>
+                        <p class="recipe-description">Traditional Italian dessert with coffee-soaked ladyfingers</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                30 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                8 servings
+                            </span>
+                        </div>
+                        <a href="tiramisu.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 7: Chicken Tacos -->
+                <div class="recipe-card" data-category="main-dishes" data-recipe="chicken-tacos">
+                    <div class="recipe-image">
+                        <img src="https://www.countrysidecravings.com/wp-content/uploads/2015/01/spicy-chicken-tacos-image.jpg" alt="Chicken Tacos">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Easy</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Spicy Chicken Tacos</h3>
+                        <p class="recipe-description">Flavorful chicken tacos with fresh toppings and spicy sauce</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                30 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                6 servings
+                            </span>
+                        </div>
+                        <a href="chicken-tacos.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 8: Bruschetta -->
+                <div class="recipe-card" data-category="appetizers" data-recipe="bruschetta">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&h=300&fit=crop" alt="Bruschetta">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Easy</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Fresh Tomato Bruschetta</h3>
+                        <p class="recipe-description">Crispy bread topped with fresh tomatoes, basil, and garlic</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                15 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                6 servings
+                            </span>
+                        </div>
+                        <a href="bruschetta.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 9: Chocolate Chip Cookies -->
+                <div class="recipe-card" data-category="desserts" data-recipe="chocolate-chip-cookies">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=300&fit=crop" alt="Chocolate Chip Cookies">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Easy</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Perfect Chocolate Chip Cookies</h3>
+                        <p class="recipe-description">Soft, chewy cookies with melted chocolate chips</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                25 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                24 cookies
+                            </span>
+                        </div>
+                        <a href="chocolate-chip-cookies.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recipe 10: Smoothie Bowl -->
+                <div class="recipe-card" data-category="beverages" data-recipe="smoothie-bowl">
+                    <div class="recipe-image">
+                        <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400&h=300&fit=crop" alt="Smoothie Bowl">
+                        <div class="recipe-overlay">
+                            <div class="recipe-difficulty">Easy</div>
+                            <div class="recipe-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Tropical Smoothie Bowl</h3>
+                        <p class="recipe-description">Refreshing smoothie bowl with tropical fruits and toppings</p>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                10 mins
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                2 servings
+                            </span>
+                        </div>
+                        <a href="smoothie-bowl.html" class="view-recipe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            View Recipe
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Recipe Hub</h2>
+                    <p>Welcome to Recipe Hub, your ultimate destination for delicious, tested recipes that bring joy to your kitchen. We believe that cooking should be fun, accessible, and rewarding for everyone.</p>
+                    <p>Each recipe is carefully crafted with detailed instructions, helpful tips, and beautiful visuals to guide you through every step of your culinary journey.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Step-by-step instructions</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Interactive cooking timer</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Print-friendly format</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mobile responsive design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=400&fit=crop" alt="Cooking">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>Recipe Hub</span>
+                    </div>
+                    <p>Discover, cook, and enjoy amazing recipes from around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recipes">Recipes</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#desserts">Desserts</a></li>
+                        <li><a href="#main-dishes">Main Dishes</a></li>
+                        <li><a href="#appetizers">Appetizers</a></li>
+                        <li><a href="#beverages">Beverages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Recipe Hub. All rights reserved. Made with ❤️ for food lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="homepage.js"></script>
+</body>
+</html>

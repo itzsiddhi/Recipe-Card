@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Card - Chocolate Chip Cookies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="recipe-card">
+            <!-- Header Section -->
+            <header class="recipe-header">
+                <div class="recipe-image-container">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500&h=300&fit=crop" 
+                         alt="Chocolate Chip Cookies" class="recipe-image">
+                    <div class="image-overlay">
+                        <h1 class="recipe-title">Chocolate Chip Cookies</h1>
+                        <div class="recipe-meta">
+                            <span class="prep-time">
+                                <i class="fas fa-clock"></i>
+                                <span>25 mins</span>
+                            </span>
+                            <span class="servings">
+                                <i class="fas fa-users"></i>
+                                <span>24 cookies</span>
+                            </span>
+                            <span class="difficulty">
+                                <i class="fas fa-star"></i>
+                                <span>Easy</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Recipe Description -->
+            <div class="recipe-description">
+                <p>Classic homemade chocolate chip cookies that are crispy on the edges and soft in the center. These perfectly balanced cookies are loaded with chocolate chips and have that irresistible homemade taste.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <span class="progress-text" id="progressText">Ready to start cooking!</span>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-container" id="timerContainer">
+                <div class="timer-display">
+                    <i class="fas fa-stopwatch"></i>
+                    <span id="timerDisplay">00:00</span>
+                    <button class="timer-btn" id="pauseTimer">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ingredients Section -->
+            <section class="ingredients-section">
+                <div class="section-header" id="ingredientsHeader">
+                    <h2>
+                        <i class="fas fa-list-ul"></i>
+                        Ingredients
+                    </h2>
+                    <button class="toggle-btn" id="ingredientsToggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="section-content" id="ingredientsContent">
+                    <ul class="ingredients-list">
+                        <li class="ingredient-item">
+                            <span class="amount">2¼ cups</span>
+                            <span class="ingredient">all-purpose flour</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 tsp</span>
+                            <span class="ingredient">baking soda</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 tsp</span>
+                            <span class="ingredient">salt</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">1 cup</span>
+                            <span class="ingredient">butter, softened</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">¾ cup</span>
+                            <span class="ingredient">granulated sugar</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">¾ cup</span>
+                            <span class="ingredient">brown sugar, packed</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">2 large</span>
+                            <span class="ingredient">eggs</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">2 tsp</span>
+                            <span class="ingredient">vanilla extract</span>
+                        </li>
+                        <li class="ingredient-item">
+                            <span class="amount">2 cups</span>
+                            <span class="ingredient">chocolate chips</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Instructions Section -->
+            <section class="instructions-section">
+                <div class="section-header" id="instructionsHeader">
+                    <h2>
+                        <i class="fas fa-clipboard-list"></i>
+                        Instructions
+                    </h2>
+                    <button class="toggle-btn" id="instructionsToggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="section-content" id="instructionsContent">
+                    <ol class="instructions-list">
+                        <li class="instruction-step" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Preheat oven:</strong> Preheat oven to 375°F (190°C). Line baking sheets with parchment paper or lightly grease them.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Mix dry ingredients:</strong> In a medium bowl, whisk together flour, baking soda, and salt. Set aside.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Cream butter and sugars:</strong> In a large bowl, cream together softened butter, granulated sugar, and brown sugar until light and fluffy, about 3 minutes.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>Add eggs and vanilla:</strong> Beat in eggs one at a time, then add vanilla extract. Mix until well combined.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="5">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <strong>Combine ingredients:</strong> Gradually blend in the flour mixture, then stir in the chocolate chips until evenly distributed.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="6">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <strong>Shape and bake:</strong> Drop rounded tablespoons of dough 2 inches apart on prepared baking sheets. Bake for 9-11 minutes until golden brown.
+                            </div>
+                        </li>
+                        <li class="instruction-step" data-step="7">
+                            <div class="step-number">7</div>
+                            <div class="step-content">
+                                <strong>Cool and serve:</strong> Cool on baking sheets for 2 minutes, then transfer to wire racks to cool completely.
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="primary-btn" id="startCookingBtn">
+                    <i class="fas fa-play"></i>
+                    Start Cooking
+                </button>
+                <button class="secondary-btn" id="nextStepBtn" disabled>
+                    <i class="fas fa-arrow-right"></i>
+                    Next Step
+                </button>
+                <button class="secondary-btn" id="resetBtn">
+                    <i class="fas fa-undo"></i>
+                    Reset
+                </button>
+                <button class="secondary-btn" id="printBtn">
+                    <i class="fas fa-print"></i>
+                    Print Recipe
+                </button>
+            </div>
+
+            <!-- Recipe Footer -->
+            <footer class="recipe-footer">
+                <div class="tips">
+                    <h3><i class="fas fa-lightbulb"></i> Pro Tips</h3>
+                    <ul>
+                        <li>Use room temperature ingredients for better mixing</li>
+                        <li>Don't overbake - cookies will continue cooking on the hot pan</li>
+                        <li>Chill dough for 30 minutes for thicker cookies</li>
+                        <li>Use parchment paper to prevent sticking</li>
+                        <li>Store in airtight container for up to a week</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
